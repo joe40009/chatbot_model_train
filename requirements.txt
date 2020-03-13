@@ -1,0 +1,9 @@
+pymysql 
+pandas 
+rasa==1.7.0 
+jieba 
+gensim 
+keras 
+opencc-python-reimplemented 
+imblearn
+scikit-learn==0.22.1

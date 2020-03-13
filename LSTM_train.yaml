@@ -1,0 +1,29 @@
+# 選擇讀訓練data方式
+# 有 mysql , csv 方式
+mode: 'csv'
+# 如選擇csv可不管下列
+sql_ip: '172.16.56.101'
+sql_port: 31996
+sql_user: 'root'
+sql_passwd: 'password'
+sql_db: 'textdb'
+# mysql 需要2個欄位 class_nm, quest_nm_adj
+sql: 'select quest_nm_adj, class_nm from textdb.fact_cls_qa_kw where quest_kw is not null'
+# csv 需要2個欄位 class_nm, quest_nm_adj
+csv_data: './data/fact_cls_qa_kw.csv'
+csv_encoding: 'big5'
+# 停用字詞檔案位置
+stopwords: './stopwords.txt'
+# jieba 自建辭庫位置
+jieba_dict: './jieba_dict.txt'
+# W2V model 儲存位置
+w2v_save_path: './LSTM_model/w2v_model/word2vec.model.bin'
+# LSTM model 訓練參數
+# class 數目
+class_num: 4
+# LSTM model 儲存位置
+LSTM_save_path: './LSTM_model/LSTM_model/sentiment.h5'
+# 訓練次數
+epoch: 1
+# 是否啟用資料增強
+SMOTE: False

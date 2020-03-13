@@ -1,0 +1,18 @@
+# 選擇讀訓練data方式
+# 有 mysql , csv 方式
+mode: 'csv'
+# 如選擇csv可不管下列
+sql_ip: '172.16.56.101'
+sql_port: 31996
+sql_user: 'root'
+sql_passwd: 'password'
+sql_db: 'textdb'
+# mysql 需要4個欄位 class_nm, quest_nm_adj, quest_kw, quest_ner
+sql: 'select class_nm, quest_nm_adj, quest_kw, quest_ner from textdb.fact_cls_qa_kw where quest_kw is not null'
+# csv 需要4個欄位 class_nm, quest_nm_adj, quest_kw, quest_ner
+csv_data: './data/fact_cls_qa_kw.csv'
+csv_encoding: 'big5'
+# 需要把class名稱換成英文 使用dict
+class2eng: {'合約查詢': 'planqu', '帳務查詢': 'billqu', '魔速方塊1.0': 'mb1', '魔速方塊2.0': 'mb2'}
+model_path: './RASA_model'
+model_name: 'fact_cls_qa_kw'
